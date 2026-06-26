@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans:    "Inter", sans-serif;
+  --font-display: "Sora", sans-serif;
+
+  --color-bg:       #0f1117;
+  --color-surface:  #1a1d27;
+  --color-surface2: #22263a;
+  --color-border:   #2e3147;
+  --color-accent:   #6366f1;
+  --color-accent2:  #818cf8;
+  --color-muted:    #8892a4;
+  --color-subtle:   #4a5568;
+
+  --shadow-accent: 0 4px 14px rgba(99,102,241,.4);
+  --shadow-card:   0 8px 24px rgba(0,0,0,.5);
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    background-color: var(--color-bg);
+    color: #e2e8f0;
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    min-height: 100dvh;
+  }
+
+  ::-webkit-scrollbar        { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track  { background: var(--color-bg); }
+  ::-webkit-scrollbar-thumb  { background: var(--color-border); border-radius: 9999px; }
+
+  input[type="search"]::-webkit-search-cancel-button { display: none; }
+}
+
+@layer components {
+  .card-hover {
+    transition: border-color 180ms cubic-bezier(.4,0,.2,1),
+                transform    180ms cubic-bezier(.4,0,.2,1),
+                box-shadow   180ms cubic-bezier(.4,0,.2,1);
+  }
+  .sidebar-transition {
+    transition: transform 180ms cubic-bezier(.4,0,.2,1);
+  }
+}
